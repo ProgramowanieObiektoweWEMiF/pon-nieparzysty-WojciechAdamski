@@ -1,0 +1,32 @@
+﻿<Window x:Class="WpfApplication3.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="380" Width="647">
+    <Grid>
+        <Button Content="Tworzenie stadionu" Height="23" HorizontalAlignment="Left" Margin="169,266,0,0" Name="button1" VerticalAlignment="Top" Width="145" Click="button1_Click" />
+        <TextBox Height="28" HorizontalAlignment="Left" Margin="169,116,0,0" Name="textBox1" VerticalAlignment="Top" Width="56" Text="0" />
+        <TextBox Height="28" HorizontalAlignment="Left" Margin="233,116,0,0" Name="textBox2" VerticalAlignment="Top" Width="56" Text="0" />
+        <TextBox Height="28" HorizontalAlignment="Left" Margin="233,213,0,0" Name="textBox3" VerticalAlignment="Top" Width="56" Text="0" />
+        <TextBox Height="28" HorizontalAlignment="Left" Margin="169,213,0,0" Name="textBox4" VerticalAlignment="Top" Width="56" Text="0" />
+        <Button Content="Tworzenie hotelu" Height="23" HorizontalAlignment="Left" Margin="169,0,0,23" Name="button2" VerticalAlignment="Bottom" Width="145" Click="button2_Click" IsEnabled="False" />
+        <ListBox  Height="306" HorizontalAlignment="Left" Margin="12,12,0,0" Name="listBox1" VerticalAlignment="Top" Width="151" SelectionChanged="listBox1_SelectionChanged" MouseLeftButtonDown="listBox1_MouseLeftButtonDown" />
+        <TextBox Height="31" HorizontalAlignment="Left" Margin="169,13,0,0" Name="textBox5" VerticalAlignment="Top" Width="211" Text="Camp Nou" />
+        <TextBox Height="23" HorizontalAlignment="Left" Margin="169,50,0,0" Name="textBox6" VerticalAlignment="Top" Width="120" Text="Nazwa" />
+        <Button Content="Kup" Height="23" HorizontalAlignment="Left" Margin="494,295,0,0" Name="button6" VerticalAlignment="Top" Width="56" Click="button6_Click" />
+        <Label Content="Sklepy" Height="27" HorizontalAlignment="Left" Margin="169,83,0,0" Name="label1" VerticalAlignment="Top" Width="56" />
+        <Label Content="Siedzenia" Height="27" HorizontalAlignment="Left" Margin="233,83,0,0" Name="label2" VerticalAlignment="Top" Width="66" />
+        <TextBox Height="28" HorizontalAlignment="Left" Margin="295,116,0,0" Name="textBox7" VerticalAlignment="Top" Width="56" Text="0" />
+        <Label Content="Zysk" Height="27" HorizontalAlignment="Left" Margin="305,83,0,0" Name="label3" VerticalAlignment="Top" Width="37" />
+        <TextBox Height="28" HorizontalAlignment="Left" Margin="357,116,0,0" Name="textBox8" VerticalAlignment="Top" Width="56" Text="0" />
+        <Label Content="Kasa" Height="27" HorizontalAlignment="Left" Margin="368,83,0,0" Name="label4" VerticalAlignment="Top" Width="36" />
+        <TextBox Height="28" HorizontalAlignment="Left" Margin="557,116,0,0" Name="textBox9" VerticalAlignment="Top" Width="56" Text="---" />
+        <Label Content="Zysk caly" Height="27" HorizontalAlignment="Left" Margin="557,83,0,0" Name="label5" VerticalAlignment="Top" Width="64" />
+        <Label Content="Max" Height="29" HorizontalAlignment="Left" Margin="169,180,0,0" Name="label6" VerticalAlignment="Top" Width="56" />
+        <Label Content="Max" Height="29" HorizontalAlignment="Left" Margin="233,180,0,0" Name="label7" VerticalAlignment="Top" Width="56" />
+        <Slider Height="23" HorizontalAlignment="Left" Margin="450,266,0,0" Name="slider1" VerticalAlignment="Top" Width="100" ValueChanged="slider1_ValueChanged" />
+        <TextBox Height="23" HorizontalAlignment="Left" Margin="430,208,0,0" Name="textBox10" VerticalAlignment="Top" Width="120" Text="1000000" />
+        <RadioButton Content="sklepy" Height="16" HorizontalAlignment="Left" Margin="169,150,0,0" Name="radioButton1" VerticalAlignment="Top" Checked="radioButton1_Checked" Click="radioButton1_Click" />
+        <RadioButton Content="siedzenia" Height="16" HorizontalAlignment="Right" Margin="0,150,326,0" Name="radioButton2" VerticalAlignment="Top" Checked="radioButton2_Checked" Click="radioButton2_Click" />
+        <TextBox Height="23" HorizontalAlignment="Left" Margin="430,237,0,0" Name="textBox11" VerticalAlignment="Top" Width="120" Text="1000000" />
+    </Grid>
+</Window>
