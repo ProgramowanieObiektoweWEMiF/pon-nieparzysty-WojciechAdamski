@@ -11,6 +11,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Windows.Threading;
 
 namespace SimCity2000
 {
@@ -19,10 +20,18 @@ namespace SimCity2000
     /// </summary>
     public partial class MainWindow : Window
     {
+        private DispatcherTimer Timer;
+        private int time = 600;
+
         public MainWindow()
         {
             InitializeComponent();
             textBox_kasa.Text = Convert.ToString(kasa);
+
+            Timer = new DispatcherTimer();
+            Timer.Interval = new TimeSpan(0, 0, 1);
+            Timer.Tick += new EventHandler(Timer_Tick);
+            Timer.Start();
         }
 
 
@@ -32,6 +41,25 @@ namespace SimCity2000
         int[,] xyz = new int[400, 400];
         int[] bufor = new int[400];
         double s;
+        int zysk_caly;
+
+
+
+        void Timer_Tick(object sender, EventArgs e)
+        {
+            time--;
+            textBox_timer.Text = Convert.ToString(time) + "s";
+            if (time == 0)
+            {
+                MessageBox.Show("Twój wynik: " + kasa);
+                this.Close();
+            }
+            if (time == 5)
+            {
+                kasa = kasa + Convert.ToInt32(textBox_zysk.Text);
+                textBox_kasa.Text = Convert.ToString(kasa);
+            }
+        }
 
 
         void update()
@@ -39,6 +67,7 @@ namespace SimCity2000
             textBox_kasa.Text = Convert.ToString(kasa); // kasa
             textBox_element1max.Text = Convert.ToString(stadion.element1_max);
             textBox_element2max.Text = Convert.ToString(stadion.element2_max);
+            textBox_zyskcaly.Text = Convert.ToString(zysk_caly);
         }
 
 
@@ -223,12 +252,14 @@ namespace SimCity2000
                     if (radioButton_element1.IsChecked == true & stadion.element1_max >= id[xyz[1, 1], xyz[1, 2] + 1, xyz[1, 3]] + s2)  // sklepy
                     {
                         id[xyz[1, 1], xyz[1, 2] + 1, xyz[1, 3]] = id[xyz[1, 1], xyz[1, 2] + 1, xyz[1, 3]] + s2;
+                        zysk_caly = zysk_caly + s2 * 200;
                         radio_button();
                     }
 
                     if (radioButton_element2.IsChecked == true & stadion.element2_max >= id[xyz[1, 1], xyz[1, 2], xyz[1, 3]] + s2)  // krzesla
                     {
                         id[xyz[1, 1], xyz[1, 2], xyz[1, 3]] = id[xyz[1, 1], xyz[1, 2], xyz[1, 3]] + s2;
+                        zysk_caly = zysk_caly + s2 * 20;
                         radio_button();
                     }
                 }
@@ -241,12 +272,14 @@ namespace SimCity2000
                     if (radioButton_element1.IsChecked == true & hotel.element1_max >= id[xyz[2, 1], xyz[2, 2] + 1, xyz[1, 3]] + s2)  // sklepy
                     {
                         id[xyz[2, 1], xyz[2, 2] + 1, xyz[1, 3]] = id[xyz[2, 1], xyz[2, 2] + 1, xyz[1, 3]] + s2;
+                        zysk_caly = zysk_caly + s2 * 200;
                         radio_button();
                     }
 
                     if (radioButton_element2.IsChecked == true & hotel.element2_max >= id[xyz[2, 1], xyz[2, 2], xyz[1, 3]] + s2)  // krzesla
                     {
                         id[xyz[2, 1], xyz[2, 2], xyz[1, 3]] = id[xyz[2, 1], xyz[2, 2], xyz[1, 3]] + s2;
+                        zysk_caly = zysk_caly + s2 * 20;
                         radio_button();
                     }
 
@@ -257,13 +290,15 @@ namespace SimCity2000
 
                     if (radioButton_element1.IsChecked == true & centrum.element1_max >= id[xyz[3, 1], xyz[3, 2] + 1, xyz[1, 3]] + s2)  // sklepy
                     {
-                        id[xyz[3, 1], xyz[3, 2] + 1, xyz[1, 3]] = id[xyz[3, 1], xyz[3, 2] + 1, xyz[1, 3]] + s2; 
+                        id[xyz[3, 1], xyz[3, 2] + 1, xyz[1, 3]] = id[xyz[3, 1], xyz[3, 2] + 1, xyz[1, 3]] + s2;
+                        zysk_caly = zysk_caly + s2 * 200;
                         radio_button();
                     }
 
                     if (radioButton_element2.IsChecked == true & centrum.element2_max >= id[xyz[3, 1], xyz[3, 2], xyz[1, 3]] + s2)  // krzesla
                     {
                         id[xyz[3, 1], xyz[3, 2], xyz[1, 3]] = id[xyz[3, 1], xyz[3, 2], xyz[1, 3]] + s2;
+                        zysk_caly = zysk_caly + s2 * 20;
                         radio_button();
                     }
 
