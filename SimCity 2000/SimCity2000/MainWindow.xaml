@@ -24,7 +24,7 @@
         <Slider Height="23" HorizontalAlignment="Left" Margin="864,201,0,0" Name="slider_kup" VerticalAlignment="Top" Width="123" ValueChanged="slider_kup_ValueChanged" />
         <Button Content="Kup elementy" Height="22" HorizontalAlignment="Left" Margin="864,230,0,0" Name="button_kup" VerticalAlignment="Top" Width="123" Click="button_kup_Click" />
         <Button Content="Kup hotel" Height="23" HorizontalAlignment="Left" Margin="21,258,0,0" Name="button_hotele" VerticalAlignment="Top" Width="135" Click="button_hotele_Click" />
-        <Button Content="Kup stadion" Height="23" HorizontalAlignment="Left" Margin="162,258,0,0" Name="button_stadiony" VerticalAlignment="Top" Width="135" Click="button_stadiony_Click" />
+        <Button Content="Kup stadion" Height="23" HorizontalAlignment="Left" Margin="162,257,0,0" Name="button_stadiony" VerticalAlignment="Top" Width="135" Click="button_stadiony_Click" />
         <Button Content="Kup centrum handlowe" Height="23" HorizontalAlignment="Left" Margin="303,258,0,0" Name="button_centra" VerticalAlignment="Top" Width="135" Click="button_centra_Click" />
         <RadioButton Height="16" HorizontalAlignment="Left" Margin="499,257,0,0" Name="radioButton_element1" VerticalAlignment="Top" Click="radioButton_element1_Click" />
         <RadioButton Height="16" HorizontalAlignment="Left" Margin="582,258,0,0" Name="radioButton_element2" VerticalAlignment="Top" Click="radioButton_element2_Click" />
@@ -35,5 +35,8 @@
         <Label Content="Cena elementow" Height="28" HorizontalAlignment="Left" Margin="762,173,0,0" Name="label_cena" VerticalAlignment="Top" />
         <Label Content="Max" Height="28" HorizontalAlignment="Left" Margin="464,173,0,0" Name="label_max1" VerticalAlignment="Top" />
         <Label Content="Max" Height="28" HorizontalAlignment="Left" Margin="549,173,0,0" Name="label_max2" VerticalAlignment="Top" />
+        <Label Content="(Cena: 500.000)" Height="28" HorizontalAlignment="Left" Margin="49,283,0,0" Name="label1" VerticalAlignment="Top" />
+        <Label Content="(Cena: 1.000.000)" Height="28" HorizontalAlignment="Left" Margin="179,283,0,0" Name="label2" VerticalAlignment="Top" />
+        <Label Content="(Cena: 800.000)" Height="28" HorizontalAlignment="Right" Margin="0,283,592,0" Name="label3" VerticalAlignment="Top" />
     </Grid>
 </Window>
