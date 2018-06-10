@@ -22,6 +22,7 @@ namespace SimCity2000
     {
         private DispatcherTimer Timer;
         private int time = 600;
+        int kasa = 10000000;
 
         public MainWindow()
         {
@@ -35,13 +36,12 @@ namespace SimCity2000
         }
 
 
-        int kasa = 10000000;
         int[, ,] id = new int[400, 400, 400];
         string[,] nazwa = new string[200, 200];
         int[,] xyz = new int[400, 400];
         int[] bufor = new int[400];
         double s;
-        int zysk_caly;
+
 
 
 
@@ -54,9 +54,9 @@ namespace SimCity2000
                 MessageBox.Show("Twój wynik: " + kasa);
                 this.Close();
             }
-            if (time == 5)
+            if (time % 10 == 0)
             {
-                kasa = kasa + Convert.ToInt32(textBox_zysk.Text);
+                kasa = kasa + Convert.ToInt32(textBox_zyskcaly.Text);
                 textBox_kasa.Text = Convert.ToString(kasa);
             }
         }
@@ -67,7 +67,6 @@ namespace SimCity2000
             textBox_kasa.Text = Convert.ToString(kasa); // kasa
             textBox_element1max.Text = Convert.ToString(stadion.element1_max);
             textBox_element2max.Text = Convert.ToString(stadion.element2_max);
-            textBox_zyskcaly.Text = Convert.ToString(zysk_caly);
         }
 
 
@@ -239,6 +238,7 @@ namespace SimCity2000
         private void button_kup_Click(object sender, RoutedEventArgs e)
         {
 
+            int zysk_caly = Convert.ToInt32(textBox_zyskcaly.Text);
             int s2 = Convert.ToInt32(s);
             wybor_tablicy();
 
@@ -253,6 +253,7 @@ namespace SimCity2000
                     {
                         id[xyz[1, 1], xyz[1, 2] + 1, xyz[1, 3]] = id[xyz[1, 1], xyz[1, 2] + 1, xyz[1, 3]] + s2;
                         zysk_caly = zysk_caly + s2 * 200;
+                        textBox_zyskcaly.Text = Convert.ToString(zysk_caly);
                         radio_button();
                     }
 
@@ -260,6 +261,7 @@ namespace SimCity2000
                     {
                         id[xyz[1, 1], xyz[1, 2], xyz[1, 3]] = id[xyz[1, 1], xyz[1, 2], xyz[1, 3]] + s2;
                         zysk_caly = zysk_caly + s2 * 20;
+                        textBox_zyskcaly.Text = Convert.ToString(zysk_caly);
                         radio_button();
                     }
                 }
@@ -273,6 +275,7 @@ namespace SimCity2000
                     {
                         id[xyz[2, 1], xyz[2, 2] + 1, xyz[1, 3]] = id[xyz[2, 1], xyz[2, 2] + 1, xyz[1, 3]] + s2;
                         zysk_caly = zysk_caly + s2 * 200;
+                        textBox_zyskcaly.Text = Convert.ToString(zysk_caly);
                         radio_button();
                     }
 
@@ -280,6 +283,7 @@ namespace SimCity2000
                     {
                         id[xyz[2, 1], xyz[2, 2], xyz[1, 3]] = id[xyz[2, 1], xyz[2, 2], xyz[1, 3]] + s2;
                         zysk_caly = zysk_caly + s2 * 20;
+                        textBox_zyskcaly.Text = Convert.ToString(zysk_caly);
                         radio_button();
                     }
 
@@ -292,6 +296,7 @@ namespace SimCity2000
                     {
                         id[xyz[3, 1], xyz[3, 2] + 1, xyz[1, 3]] = id[xyz[3, 1], xyz[3, 2] + 1, xyz[1, 3]] + s2;
                         zysk_caly = zysk_caly + s2 * 200;
+                        textBox_zyskcaly.Text = Convert.ToString(zysk_caly);
                         radio_button();
                     }
 
@@ -299,6 +304,7 @@ namespace SimCity2000
                     {
                         id[xyz[3, 1], xyz[3, 2], xyz[1, 3]] = id[xyz[3, 1], xyz[3, 2], xyz[1, 3]] + s2;
                         zysk_caly = zysk_caly + s2 * 20;
+                        textBox_zyskcaly.Text = Convert.ToString(zysk_caly);
                         radio_button();
                     }
 
