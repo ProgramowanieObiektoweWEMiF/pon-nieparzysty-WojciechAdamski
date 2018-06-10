@@ -56,6 +56,16 @@ namespace SimCity2000
                 textBox_element1max.Text = Convert.ToString(stadion.element1_max);
                 textBox_element2max.Text = Convert.ToString(stadion.element2_max);
             }
+            if (xyz[1, 3] == 3)
+            {
+                textBox_element2.Text = Convert.ToString(id[xyz[3, 1], xyz[3, 2], xyz[1, 3]]); // krzesla
+                textBox_element1.Text = Convert.ToString(id[xyz[3, 1], xyz[3, 2] + 1, xyz[1, 3]]); // sklepy
+                textBox_zysk.Text = Convert.ToString((id[xyz[3, 1], xyz[3, 2] + 1, xyz[1, 3]] * 200) + (id[xyz[3, 1], xyz[3, 2], xyz[1, 3]] * 20)); // zysk
+                textBox_kasa.Text = Convert.ToString(kasa); // kasa
+                textBox_nazwa_w.Text = nazwa[xyz[3, 2], xyz[1, 3]]; // nazwa
+                textBox_element1max.Text = Convert.ToString(stadion.element1_max);
+                textBox_element2max.Text = Convert.ToString(stadion.element2_max);
+            }
 
         }
 
@@ -66,6 +76,8 @@ namespace SimCity2000
             xyz[1, 1] = listBox_stadiony.SelectedIndex;
             xyz[2, 2] = listBox_hotele.SelectedIndex * 2;
             xyz[2, 1] = listBox_hotele.SelectedIndex;
+            xyz[3, 2] = listBox_centra.SelectedIndex * 2;
+            xyz[3, 1] = listBox_centra.SelectedIndex;
         }
 
 
@@ -163,7 +175,43 @@ namespace SimCity2000
 
         private void button_centra_Click(object sender, RoutedEventArgs e)
         {
+            xyz[1, 3] = 3;
 
+
+            if (kasa >= 10000)
+            {
+
+                stadion stadion1 = new stadion(textBox_nazwa.Text, 0, 0);
+
+
+
+                xyz[3, 1] = bufor[5];
+                xyz[3, 2] = bufor[6];
+
+
+                id[xyz[3, 1], xyz[3, 2], xyz[1, 3]] = stadion1.siedzenia_kupione;
+                id[xyz[3, 1], xyz[3, 2] + 1, xyz[1, 3]] = stadion1.sklepy_kupione;
+                nazwa[xyz[3, 2], xyz[1, 3]] = "Centrum: " + stadion1.nazwa;
+
+                listBox_centra.Items.Add(nazwa[xyz[3, 2], xyz[1, 3]]);
+                kasa = kasa - 10000;
+
+                update_texboxow();
+
+
+                xyz[3, 1]++;
+                xyz[3, 2]++;
+                xyz[3, 2]++;
+
+
+                bufor[6] = xyz[3, 2];
+                bufor[5] = xyz[3, 1];
+
+            }
+            else
+            {
+                MessageBox.Show("Nie masz kasy");
+            }
         }
 
 
@@ -215,6 +263,25 @@ namespace SimCity2000
                     if (radioButton_element2.IsChecked == true & hotel.element2_max >= id[xyz[2, 1], xyz[2, 2], xyz[1, 3]] + s2)  // krzesla
                     {
                         id[xyz[2, 1], xyz[2, 2], xyz[1, 3]] = id[xyz[2, 1], xyz[2, 2], xyz[1, 3]] + s2;
+                        kasa = kasa - Convert.ToInt32(textBox_kup_cena.Text);
+                        update_texboxow();
+                    }
+
+                }
+                if (xyz[1, 3] == 3)
+                {
+
+
+                    if (radioButton_element1.IsChecked == true & centrum.element1_max >= id[xyz[3, 1], xyz[3, 2] + 1, xyz[1, 3]] + s2)  // sklepy
+                    {
+                        id[xyz[3, 1], xyz[3, 2] + 1, xyz[1, 3]] = id[xyz[3, 1], xyz[3, 2] + 1, xyz[1, 3]] + s2;
+                        kasa = kasa - Convert.ToInt32(textBox_kup_cena.Text);
+                        update_texboxow();
+                    }
+
+                    if (radioButton_element2.IsChecked == true & centrum.element2_max >= id[xyz[3, 1], xyz[3, 2], xyz[1, 3]] + s2)  // krzesla
+                    {
+                        id[xyz[3, 1], xyz[3, 2], xyz[3, 3]] = id[xyz[3, 1], xyz[3, 2], xyz[1, 3]] + s2;
                         kasa = kasa - Convert.ToInt32(textBox_kup_cena.Text);
                         update_texboxow();
                     }
@@ -272,6 +339,17 @@ namespace SimCity2000
             textBox_element2w.Text = "Siedzenia";
             textBox_element1rb.Text = "Sklep";
             textBox_element2rb.Text = "Siedzenia";
+        }
+
+        private void listBox_centra_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            xyz[1, 3] = 3;
+            wybor_tablicy();
+            update_texboxow();
+            textBox_element1w.Text = "Restauracje";
+            textBox_element2w.Text = "Atrakcje";
+            textBox_element1rb.Text = "Restauracje";
+            textBox_element2rb.Text = "Atrakcje";
         }
     }
 }

@@ -5,7 +5,7 @@
     <Grid>
         <ListBox Height="222" HorizontalAlignment="Left" Margin="21,30,0,0" Name="listBox_hotele" VerticalAlignment="Top" Width="135" SelectionChanged="listBox_hotele_SelectionChanged" />
         <ListBox Height="222" HorizontalAlignment="Right" Margin="0,30,710,0" Name="listBox_stadiony" VerticalAlignment="Top" Width="135" SelectionChanged="listBox_stadiony_SelectionChanged" />
-        <ListBox Height="222" HorizontalAlignment="Left" Margin="303,30,0,0" Name="listBox_centra" VerticalAlignment="Top" Width="135" />
+        <ListBox Height="222" HorizontalAlignment="Left" Margin="303,30,0,0" Name="listBox_centra" VerticalAlignment="Top" Width="135" SelectionChanged="listBox_centra_SelectionChanged" />
         <TextBox Height="31" HorizontalAlignment="Left" Margin="464,30,0,0" Name="textBox_nazwa" VerticalAlignment="Top" Width="186" Text="Wpisz nazwe" />
         <TextBox Height="31" HorizontalAlignment="Left" Margin="464,67,0,0" Name="textBox_nazwa_w" VerticalAlignment="Top" Width="186" Text="Nazwa" />
         <TextBox Height="22" HorizontalAlignment="Left" Margin="464,123,0,0" Name="textBox_element1w" VerticalAlignment="Top" Width="79" Text="element1" />
