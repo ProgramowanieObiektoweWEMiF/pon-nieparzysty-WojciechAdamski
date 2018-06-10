@@ -1,0 +1,33 @@
+C:\Users\user\documents\visual studio 2010\Projects\SimCity2000\SimCity2000\bin\Debug\SimCity2000.exe
+C:\Users\user\documents\visual studio 2010\Projects\SimCity2000\SimCity2000\bin\Debug\SimCity2000.pdb
+C:\Users\user\documents\visual studio 2010\Projects\SimCity2000\SimCity2000\obj\x86\Debug\MainWindow.baml
+C:\Users\user\documents\visual studio 2010\Projects\SimCity2000\SimCity2000\obj\x86\Debug\MainWindow.g.cs
+C:\Users\user\documents\visual studio 2010\Projects\SimCity2000\SimCity2000\obj\x86\Debug\App.g.cs
+C:\Users\user\documents\visual studio 2010\Projects\SimCity2000\SimCity2000\obj\x86\Debug\SimCity2000_MarkupCompile.cache
+C:\Users\user\documents\visual studio 2010\Projects\SimCity2000\SimCity2000\obj\x86\Debug\SimCity2000.g.resources
+C:\Users\user\documents\visual studio 2010\Projects\SimCity2000\SimCity2000\obj\x86\Debug\SimCity2000.Properties.Resources.resources
+C:\Users\user\documents\visual studio 2010\Projects\SimCity2000\SimCity2000\obj\x86\Debug\SimCity2000.csproj.GenerateResource.Cache
+C:\Users\user\documents\visual studio 2010\Projects\SimCity2000\SimCity2000\obj\x86\Debug\SimCity2000.exe
+C:\Users\user\documents\visual studio 2010\Projects\SimCity2000\SimCity2000\obj\x86\Debug\SimCity2000.pdb
+C:\Users\user\Desktop\SimCity2000\SimCity2000\obj\x86\Debug\SimCity2000.exe
+C:\Users\user\Desktop\SimCity2000\SimCity2000\obj\x86\Debug\SimCity2000.pdb
+C:\Users\user\Desktop\SimCity2000\SimCity2000\bin\Debug\SimCity2000.exe
+C:\Users\user\Desktop\SimCity2000\SimCity2000\bin\Debug\SimCity2000.pdb
+C:\Users\user\Desktop\SimCity2000\SimCity2000\obj\x86\Debug\MainWindow.baml
+C:\Users\user\Desktop\SimCity2000\SimCity2000\obj\x86\Debug\MainWindow.g.cs
+C:\Users\user\Desktop\SimCity2000\SimCity2000\obj\x86\Debug\App.g.cs
+C:\Users\user\Desktop\SimCity2000\SimCity2000\obj\x86\Debug\SimCity2000_MarkupCompile.cache
+C:\Users\user\Desktop\SimCity2000\SimCity2000\obj\x86\Debug\SimCity2000.g.resources
+C:\Users\user\Desktop\SimCity2000\SimCity2000\obj\x86\Debug\SimCity2000.Properties.Resources.resources
+C:\Users\user\Desktop\SimCity2000\SimCity2000\obj\x86\Debug\SimCity2000.csproj.GenerateResource.Cache
+C:\Users\user\Desktop\SimCity 2000\SimCity2000\obj\x86\Debug\SimCity2000.exe
+C:\Users\user\Desktop\SimCity 2000\SimCity2000\obj\x86\Debug\SimCity2000.pdb
+C:\Users\user\Desktop\SimCity 2000\SimCity2000\bin\Debug\SimCity2000.exe
+C:\Users\user\Desktop\SimCity 2000\SimCity2000\bin\Debug\SimCity2000.pdb
+C:\Users\user\Desktop\SimCity 2000\SimCity2000\obj\x86\Debug\MainWindow.baml
+C:\Users\user\Desktop\SimCity 2000\SimCity2000\obj\x86\Debug\MainWindow.g.cs
+C:\Users\user\Desktop\SimCity 2000\SimCity2000\obj\x86\Debug\App.g.cs
+C:\Users\user\Desktop\SimCity 2000\SimCity2000\obj\x86\Debug\SimCity2000_MarkupCompile.cache
+C:\Users\user\Desktop\SimCity 2000\SimCity2000\obj\x86\Debug\SimCity2000.g.resources
+C:\Users\user\Desktop\SimCity 2000\SimCity2000\obj\x86\Debug\SimCity2000.Properties.Resources.resources
+C:\Users\user\Desktop\SimCity 2000\SimCity2000\obj\x86\Debug\SimCity2000.csproj.GenerateResource.Cache
