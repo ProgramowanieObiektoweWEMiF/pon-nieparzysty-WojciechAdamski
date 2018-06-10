@@ -26,7 +26,7 @@ namespace SimCity2000
         }
 
 
-        int kasa = 10000000;
+        int kasa = 100000;
         int[, ,] id = new int[400, 400, 400];
         string[,] nazwa = new string[200, 200];
         int[,] xyz = new int[400, 400];
