@@ -38,7 +38,7 @@ namespace SimCity2000
 
         public static string nazwaa(string[,] c, int[,] d)
         {
-            return c[d[2, 2], d[1, 3]];
+            return c[d[2, 1], d[1, 3]];
 
         }
     }

@@ -39,17 +39,14 @@ namespace SimCity2000
 
 
 
-
         int[, ,] id = new int[10, 400, 10];
-        string[,] nazwa = new string[200, 10];
+        string[,] nazwa = new string[400, 10];
         int[,] xyz = new int[10, 10];
         int[] bufor = new int[10];
         double s;
 
 
-
-
-
+        
         void Timer_Tick(object sender, EventArgs e)
         {
             time--;
@@ -111,58 +108,20 @@ namespace SimCity2000
         }
 
 
+
         void wybor_tablicy()
         {
             xyz[1, 1] = listBox_stadiony.SelectedIndex;
-            xyz[1, 2] = listBox_stadiony.SelectedIndex * 2;
             xyz[2, 1] = listBox_hotele.SelectedIndex;
-            xyz[2, 2] = listBox_hotele.SelectedIndex * 2;
             xyz[3, 1] = listBox_centra.SelectedIndex;
-            xyz[3, 2] = listBox_centra.SelectedIndex * 2;
         }
+
 
 
         void radio_button()
         {
             kasa = kasa - Convert.ToInt32(textBox_kup_cena.Text);
             update_texboxow();
-        }
-
-
-        private void button_hotele_Click(object sender, RoutedEventArgs e)
-        {
-            {
-                xyz[1, 3] = 2;
-
-                if (kasa >= 500000)
-                {
-
-                    hotel hotel1 = new hotel(textBox_nazwa.Text, 0, 0);
-
-                    xyz[2, 1] = bufor[3];
-                    xyz[2, 2] = bufor[4];
-
-                    id[xyz[2, 1], xyz[2, 2], xyz[1, 3]] = hotel1.pokoje_kupione;
-                    id[xyz[2, 1], xyz[2, 2] + 1, xyz[1, 3]] = hotel1.parkingi_kupione;
-                    nazwa[xyz[2, 2], xyz[1, 3]] = "Hotel: " + hotel1.nazwa;
-                    listBox_hotele.Items.Add(nazwa[xyz[2, 2], xyz[1, 3]]);
-                    kasa = kasa - 500000;
-                    update_texboxow();
-
-                    xyz[2, 1]++;
-                    xyz[2, 2]++;
-                    xyz[2, 2]++;
-
-                    bufor[4] = xyz[2, 2];
-                    bufor[3] = xyz[2, 1];
-
-                }
-                else
-                {
-                    MessageBox.Show("Nie masz kasy");
-                }
-
-            }
         }
 
 
@@ -177,20 +136,16 @@ namespace SimCity2000
                 stadion stadion1 = new stadion(textBox_nazwa.Text, 0, 0);
 
                 xyz[1, 1] = bufor[1];
-                xyz[1, 2] = bufor[2];
 
                 id[xyz[1, 1], xyz[1, 2], xyz[1, 3]] = stadion1.lozevip_kupione;
                 id[xyz[1, 1], xyz[1, 2] + 1, xyz[1, 3]] = stadion1.sklepy_kupione;
-                nazwa[xyz[1, 2], xyz[1, 3]] = "Stadion: " + stadion1.nazwa;
-                listBox_stadiony.Items.Add(nazwa[xyz[1, 2], xyz[1, 3]]);
-                kasa = kasa - 1000000;
+                nazwa[xyz[1, 1], xyz[1, 3]] = "Stadion: " + stadion1.nazwa;
+                listBox_stadiony.Items.Add(nazwa[xyz[1, 1], xyz[1, 3]]);
+                kasa = kasa - 10000;
                 update_texboxow();
 
                 xyz[1, 1]++;
-                xyz[1, 2]++;
-                xyz[1, 2]++;
 
-                bufor[2] = xyz[1, 2];
                 bufor[1] = xyz[1, 1];
 
             }
@@ -201,6 +156,38 @@ namespace SimCity2000
         }
 
 
+
+        private void button_hotele_Click(object sender, RoutedEventArgs e)
+        {
+            {
+                xyz[1, 3] = 2;
+
+                if (kasa >= 500000)
+                {
+
+                    hotel hotel1 = new hotel(textBox_nazwa.Text, 0, 0);
+
+                    xyz[2, 1] = bufor[2];
+
+                    id[xyz[2, 1], xyz[2, 2], xyz[1, 3]] = hotel1.pokoje_kupione;
+                    id[xyz[2, 1], xyz[2, 2] + 1, xyz[1, 3]] = hotel1.parkingi_kupione;
+                    nazwa[xyz[2, 1], xyz[1, 3]] = "Hotel: " + hotel1.nazwa;
+                    listBox_hotele.Items.Add(nazwa[xyz[2, 1], xyz[1, 3]]);
+                    kasa = kasa - 500000;
+                    update_texboxow();
+
+                    xyz[2, 1]++;
+
+                    bufor[2] = xyz[2, 1];
+
+                }
+                else
+                {
+                    MessageBox.Show("Nie masz kasy");
+                }
+
+            }
+        }
 
 
 
@@ -213,22 +200,18 @@ namespace SimCity2000
 
                 centrum centrum1 = new centrum(textBox_nazwa.Text, 0, 0);
 
-                xyz[3, 1] = bufor[5];
-                xyz[3, 2] = bufor[6];
+                xyz[3, 1] = bufor[3];
 
                 id[xyz[3, 1], xyz[3, 2], xyz[1, 3]] = centrum1.restauracje_kupione;
                 id[xyz[3, 1], xyz[3, 2] + 1, xyz[1, 3]] = centrum1.automaty_kupione;
-                nazwa[xyz[3, 2], xyz[1, 3]] = "Centrum: " + centrum1.nazwa;
-                listBox_centra.Items.Add(nazwa[xyz[3, 2], xyz[1, 3]]);
+                nazwa[xyz[3, 1], xyz[1, 3]] = "Centrum: " + centrum1.nazwa;
+                listBox_centra.Items.Add(nazwa[xyz[3, 1], xyz[1, 3]]);
                 kasa = kasa - 800000;
                 update_texboxow();
 
                 xyz[3, 1]++;
-                xyz[3, 2]++;
-                xyz[3, 2]++;
 
-                bufor[6] = xyz[3, 2];
-                bufor[5] = xyz[3, 1];
+                bufor[3] = xyz[3, 1];
 
             }
             else
@@ -238,11 +221,7 @@ namespace SimCity2000
         }
 
 
-
-
-
-
-
+        
         private void button_kup_Click(object sender, RoutedEventArgs e)
         {
 
@@ -273,8 +252,7 @@ namespace SimCity2000
                         radio_button();
                     }
                 }
-
-
+                
                 if (xyz[1, 3] == 2) // hotel
                 {
 
@@ -296,6 +274,7 @@ namespace SimCity2000
                     }
 
                 }
+
                 if (xyz[1, 3] == 3) // centrum
                 {
 
@@ -314,11 +293,10 @@ namespace SimCity2000
                         zysk_caly = zysk_caly + nieruchomosc.zysk_el2(s2);
                         textBox_zyskcaly.Text = Convert.ToString(zysk_caly);
                         radio_button();
-                    }
-
+                    }                    
                 }
-
             }
+
             else
             {
                 MessageBox.Show("Nie masz kasy.");
@@ -338,7 +316,7 @@ namespace SimCity2000
         }
 
 
-   
+        
         private void radioButton_element1_Click(object sender, RoutedEventArgs e)
         {
             textBox_kup_cena.Text = Convert.ToString(s * 15000);
@@ -349,19 +327,6 @@ namespace SimCity2000
         private void radioButton_element2_Click(object sender, RoutedEventArgs e)
         {
             textBox_kup_cena.Text = Convert.ToString(s * 1200);
-        }
-
-
-
-        private void listBox_hotele_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            xyz[1, 3] = 2;
-            wybor_tablicy();
-            update_texboxow();
-            textBox_element1w.Text = "Pokoje";
-            textBox_element2w.Text = "Parking";
-            textBox_element1rb.Text = "Pokoje";
-            textBox_element2rb.Text = "Parking";
         }
 
 
@@ -378,6 +343,19 @@ namespace SimCity2000
         }
 
 
+
+        private void listBox_hotele_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            xyz[1, 3] = 2;
+            wybor_tablicy();
+            update_texboxow();
+            textBox_element1w.Text = "Pokoje";
+            textBox_element2w.Text = "Parking";
+            textBox_element1rb.Text = "Pokoje";
+            textBox_element2rb.Text = "Parking";
+        }
+
+        
 
         private void listBox_centra_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
