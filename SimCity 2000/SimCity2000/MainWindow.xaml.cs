@@ -141,7 +141,7 @@ namespace SimCity2000
                 id[xyz[1, 1], xyz[1, 2] + 1, xyz[1, 3]] = stadion1.sklepy_kupione;
                 nazwa[xyz[1, 1], xyz[1, 3]] = "Stadion: " + stadion1.nazwa;
                 listBox_stadiony.Items.Add(nazwa[xyz[1, 1], xyz[1, 3]]);
-                kasa = kasa - 10000;
+                kasa = kasa - 1000000;
                 update_texboxow();
 
                 xyz[1, 1]++;
