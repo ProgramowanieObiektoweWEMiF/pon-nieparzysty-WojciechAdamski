@@ -15,7 +15,24 @@ namespace SimCity2000
         }
 
 
+
         public int pokoje_kupione;
         public int parkingi_kupione;
+
+
+
+
+        public static int el1(int[, ,] c, int[,] d)
+        {
+            return c[d[2, 1], d[2, 2], d[1, 3]];
+
+        }
+
+
+        public static int el2(int[, ,] c, int[,] d)
+        {
+            return c[d[2, 1], d[2, 2] + 1, d[1, 3]];
+
+        }
     }
 }

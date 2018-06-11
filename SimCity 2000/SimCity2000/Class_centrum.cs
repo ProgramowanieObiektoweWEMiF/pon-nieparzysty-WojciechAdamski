@@ -15,8 +15,25 @@ namespace SimCity2000
         }
 
 
+
         public int restauracje_kupione;
         public int automaty_kupione;
+
+
+
+
+        public static int el1(int[, ,] c, int[,] d)
+        {
+            return c[d[3, 1], d[3, 2], d[1, 3]];
+
+        }
+
+
+        public static int el2(int[, ,] c, int[,] d)
+        {
+            return c[d[3, 1], d[3, 2] + 1, d[1, 3]];
+
+        }
 
     }
 }

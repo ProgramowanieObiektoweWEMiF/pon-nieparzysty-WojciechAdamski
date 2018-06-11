@@ -15,8 +15,25 @@ namespace SimCity2000
         }
 
 
+
         public int lozevip_kupione;
         public int sklepy_kupione;
+
+
+
+
+        public static int el1(int[, ,] c, int[,] d)
+        {
+            return c[d[1, 1], d[1, 2], d[1, 3]];
+
+        }
+
+
+        public static int el2(int[, ,] c, int[,] d)
+        {
+            return c[d[1, 1], d[1, 2]+1, d[1, 3]];
+
+        }
 
     }
 }
