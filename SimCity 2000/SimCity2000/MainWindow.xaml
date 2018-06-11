@@ -37,7 +37,7 @@
         <Label Content="Max" Height="28" HorizontalAlignment="Left" Margin="562,173,0,0" Name="label_max2" VerticalAlignment="Top" />
         <Label Content="(Cena: 500.000)" Height="28" HorizontalAlignment="Left" Margin="49,283,0,0" Name="label1" VerticalAlignment="Top" />
         <Label Content="(Cena: 1.000.000)" Height="28" HorizontalAlignment="Left" Margin="179,283,0,0" Name="label2" VerticalAlignment="Top" />
-        <Label Content="(Cena: 800.000)" Height="28" HorizontalAlignment="Right" Margin="0,283,592,0" Name="label3" VerticalAlignment="Top" />
+        <Label Content="(Cena: 800.000)" Height="28" HorizontalAlignment="Left" Margin="324,283,0,0" Name="label3" VerticalAlignment="Top" />
         <TextBox Height="23" HorizontalAlignment="Left" Margin="905,30,0,0" Name="textBox_timer" VerticalAlignment="Top" Width="79" Text="600s" IsEnabled="False" />
         <Label Content="Czas:" Height="28" HorizontalAlignment="Left" Margin="864,30,0,0" Name="label4" VerticalAlignment="Top" />
         <Label Content="Hotele" Height="39" HorizontalAlignment="Left" Margin="21,0,0,0" Name="label5" VerticalAlignment="Top" FontWeight="Bold" FontSize="20" />
