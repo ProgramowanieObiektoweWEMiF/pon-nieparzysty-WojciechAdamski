@@ -79,7 +79,7 @@ namespace SimCity2000
                 textBox_element2.Text = Convert.ToString(stadion.el1(id, xyz));
                 textBox_element1.Text = Convert.ToString(stadion.el2(id, xyz));
                 textBox_zysk.Text = Convert.ToString((stadion.el2(id, xyz) * 200) + (stadion.el1(id, xyz) * 20));
-                textBox_nazwa_w.Text = nazwa[xyz[1, 2], xyz[1, 3]];
+                textBox_nazwa_w.Text = stadion.nazwaa(nazwa, xyz);
                 update();
             }
 
@@ -88,7 +88,7 @@ namespace SimCity2000
                 textBox_element2.Text = Convert.ToString(hotel.el1(id, xyz));
                 textBox_element1.Text = Convert.ToString(hotel.el2(id, xyz));
                 textBox_zysk.Text = Convert.ToString((hotel.el2(id, xyz) * 200) + (hotel.el1(id, xyz) * 20));
-                textBox_nazwa_w.Text = nazwa[xyz[2, 2], xyz[1, 3]];
+                textBox_nazwa_w.Text = hotel.nazwaa(nazwa, xyz);
                 update();
             }
 
@@ -97,7 +97,7 @@ namespace SimCity2000
                 textBox_element2.Text = Convert.ToString(centrum.el1(id, xyz));
                 textBox_element1.Text = Convert.ToString(centrum.el2(id, xyz)); 
                 textBox_zysk.Text = Convert.ToString(centrum.el2(id, xyz) * 200 + (centrum.el1(id, xyz) * 20));
-                textBox_nazwa_w.Text = nazwa[xyz[3, 2], xyz[1, 3]];
+                textBox_nazwa_w.Text = centrum.nazwaa(nazwa, xyz);
                 update();
             }
         }

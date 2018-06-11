@@ -31,7 +31,14 @@ namespace SimCity2000
 
         public static int el2(int[, ,] c, int[,] d)
         {
-            return c[d[1, 1], d[1, 2]+1, d[1, 3]];
+            return c[d[1, 1], d[1, 2] + 1, d[1, 3]];
+
+        }
+
+
+        public static string nazwaa(string[,] c, int[,] d)
+        {
+            return c[d[1, 2], d[1, 3]];
 
         }
 

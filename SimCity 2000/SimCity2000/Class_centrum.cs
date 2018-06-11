@@ -35,5 +35,12 @@ namespace SimCity2000
 
         }
 
+
+        public static string nazwaa(string[,] c, int[,] d)
+        {
+            return c[d[3, 2], d[1, 3]];
+
+        }
+
     }
 }
