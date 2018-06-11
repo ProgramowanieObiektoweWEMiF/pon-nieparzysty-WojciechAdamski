@@ -24,6 +24,8 @@ namespace SimCity2000
         private int time = 600;
         int kasa = 10000000;
 
+
+
         public MainWindow()
         {
             InitializeComponent();
@@ -36,6 +38,8 @@ namespace SimCity2000
         }
 
 
+
+
         int[, ,] id = new int[10, 400, 10];
         string[,] nazwa = new string[200, 10];
         int[,] xyz = new int[10, 10];
@@ -45,21 +49,25 @@ namespace SimCity2000
 
 
 
+
         void Timer_Tick(object sender, EventArgs e)
         {
             time--;
             textBox_timer.Text = Convert.ToString(time) + "s";
+
             if (time == 0)
             {
                 MessageBox.Show("Koniec gry. Twój wynik: " + kasa);
                 this.Close();
             }
+
             if (time % 10 == 0)
             {
                 kasa = kasa + Convert.ToInt32(textBox_zyskcaly.Text);
                 textBox_kasa.Text = Convert.ToString(kasa);
             }
         }
+
 
 
         void update()
@@ -74,29 +82,29 @@ namespace SimCity2000
         void update_texboxow()
         {
 
-            if (xyz[1, 3] == 1) //stadion
+            if (nieruchomosc.wybor(xyz) == 1) //stadion
             {
                 textBox_element2.Text = Convert.ToString(stadion.el1(id, xyz));
                 textBox_element1.Text = Convert.ToString(stadion.el2(id, xyz));
-                textBox_zysk.Text = Convert.ToString((stadion.el2(id, xyz) * 200) + (stadion.el1(id, xyz) * 20));
+                textBox_zysk.Text = Convert.ToString((stadion.el2(id, xyz) * 2000) + (stadion.el1(id, xyz) * 400));
                 textBox_nazwa_w.Text = stadion.nazwaa(nazwa, xyz);
                 update();
             }
 
-            if (xyz[1, 3] == 2) //hotel
+            if (nieruchomosc.wybor(xyz) == 2) //hotel
             {
                 textBox_element2.Text = Convert.ToString(hotel.el1(id, xyz));
                 textBox_element1.Text = Convert.ToString(hotel.el2(id, xyz));
-                textBox_zysk.Text = Convert.ToString((hotel.el2(id, xyz) * 200) + (hotel.el1(id, xyz) * 20));
+                textBox_zysk.Text = Convert.ToString((hotel.el2(id, xyz) * 2000) + (hotel.el1(id, xyz) * 400));
                 textBox_nazwa_w.Text = hotel.nazwaa(nazwa, xyz);
                 update();
             }
 
-            if (xyz[1, 3] == 3)//centrum
+            if (nieruchomosc.wybor(xyz) == 3)//centrum
             {
                 textBox_element2.Text = Convert.ToString(centrum.el1(id, xyz));
                 textBox_element1.Text = Convert.ToString(centrum.el2(id, xyz)); 
-                textBox_zysk.Text = Convert.ToString(centrum.el2(id, xyz) * 200 + (centrum.el1(id, xyz) * 20));
+                textBox_zysk.Text = Convert.ToString((centrum.el2(id, xyz) * 2000) + (centrum.el1(id, xyz) * 400));
                 textBox_nazwa_w.Text = centrum.nazwaa(nazwa, xyz);
                 update();
             }
@@ -105,12 +113,12 @@ namespace SimCity2000
 
         void wybor_tablicy()
         {
-            xyz[1, 2] = listBox_stadiony.SelectedIndex * 2;
             xyz[1, 1] = listBox_stadiony.SelectedIndex;
-            xyz[2, 2] = listBox_hotele.SelectedIndex * 2;
+            xyz[1, 2] = listBox_stadiony.SelectedIndex * 2;
             xyz[2, 1] = listBox_hotele.SelectedIndex;
-            xyz[3, 2] = listBox_centra.SelectedIndex * 2;
+            xyz[2, 2] = listBox_hotele.SelectedIndex * 2;
             xyz[3, 1] = listBox_centra.SelectedIndex;
+            xyz[3, 2] = listBox_centra.SelectedIndex * 2;
         }
 
 
@@ -271,7 +279,7 @@ namespace SimCity2000
                 {
 
 
-                    if (radioButton_element1.IsChecked == true & hotel.element1_max >= hotel.el2(id, xyz) + s2)  // sklepy
+                    if (radioButton_element1.IsChecked == true & hotel.element1_max >= hotel.el2(id, xyz) + s2)  
                     {
                         id[xyz[2, 1], xyz[2, 2] + 1, xyz[1, 3]] = hotel.el2(id, xyz) + s2;
                         zysk_caly = zysk_caly + nieruchomosc.zysk_el1(s2);
@@ -279,7 +287,7 @@ namespace SimCity2000
                         radio_button();
                     }
 
-                    if (radioButton_element2.IsChecked == true & hotel.element2_max >= hotel.el1(id, xyz) + s2)  // krzesla
+                    if (radioButton_element2.IsChecked == true & hotel.element2_max >= hotel.el1(id, xyz) + s2) 
                     {
                         id[xyz[2, 1], xyz[2, 2], xyz[1, 3]] = hotel.el1(id, xyz) + s2;
                         zysk_caly = zysk_caly + nieruchomosc.zysk_el2(s2);
@@ -292,7 +300,7 @@ namespace SimCity2000
                 {
 
 
-                    if (radioButton_element1.IsChecked == true & centrum.element1_max >= centrum.el2(id, xyz) + s2)  // sklepy
+                    if (radioButton_element1.IsChecked == true & centrum.element1_max >= centrum.el2(id, xyz) + s2)  
                     {
                         id[xyz[3, 1], xyz[3, 2] + 1, xyz[1, 3]] = centrum.el2(id, xyz) + s2;
                         zysk_caly = zysk_caly + nieruchomosc.zysk_el1(s2);
@@ -300,9 +308,9 @@ namespace SimCity2000
                         radio_button();
                     }
 
-                    if (radioButton_element2.IsChecked == true & centrum.element2_max >= centrum.el2(id, xyz) + s2)  // krzesla
+                    if (radioButton_element2.IsChecked == true & centrum.element2_max >= centrum.el1(id, xyz) + s2)  
                     {
-                        id[xyz[3, 1], xyz[3, 2], xyz[1, 3]] = centrum.el2(id, xyz) + s2;
+                        id[xyz[3, 1], xyz[3, 2], xyz[1, 3]] = centrum.el1(id, xyz) + s2;
                         zysk_caly = zysk_caly + nieruchomosc.zysk_el2(s2);
                         textBox_zyskcaly.Text = Convert.ToString(zysk_caly);
                         radio_button();

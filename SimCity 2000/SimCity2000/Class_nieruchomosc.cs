@@ -16,14 +16,18 @@ namespace SimCity2000
 
         public static int zysk_el1(int a)
         {
-            return a * 200;
+            return a * 2000;
         }
 
         public static int zysk_el2(int b)
         {
-            return b * 20;
+            return b * 400;
         }
 
+        public static int wybor (int[,] c)
+        {
+            return c[1, 3];
+        }
 
     }
 }

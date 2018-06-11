@@ -41,6 +41,5 @@ namespace SimCity2000
             return c[d[3, 2], d[1, 3]];
 
         }
-
     }
 }
