@@ -39,7 +39,7 @@ namespace SimCity2000
 
 
 
-        int[, ,] id = new int[10, 400, 10];
+        int[, ,] id = new int[400, 10, 10];
         string[,] nazwa = new string[400, 10];
         int[,] xyz = new int[10, 10];
         int[] bufor = new int[10];
